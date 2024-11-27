@@ -1,6 +1,6 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 
-const Accordion = ({items}) => {
+const Accordion = ({ items }) => {
   const [openIndexes, setOpenIndexes] = useState([]);
 
   const handleToggle = (index) => {
@@ -9,9 +9,10 @@ const Accordion = ({items}) => {
     } else {
       setOpenIndexes([...openIndexes, index]);
     }
-  }
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-4">
       {items.map((item, index) => (
         <div key={index} className="border border-gray-300 rounded-lg">
           <button
@@ -20,8 +21,8 @@ const Accordion = ({items}) => {
           >
             <span className="text-lg font-medium">{item.title}</span>
             <svg
-              className={`w-5 h-5 transform transition-transform ${
-                openIndexes.includes(index) ? "rotate-180" : ""
+              className={`w-5 h-5 transform transition-all ${
+                openIndexes.includes(index) ? 'rotate-180' : ''
               }`}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -36,15 +37,24 @@ const Accordion = ({items}) => {
               />
             </svg>
           </button>
-          {openIndexes.includes(index) && (
-            <div className="p-4 bg-white text-gray-700">
-              {item.content}
-            </div>
-          )}
+
+          <div
+            className={`overflow-hidden transition-all duration-1000 ease-in-out ${
+              openIndexes.includes(index)
+                ? 'max-h-[500px] opacity-100'
+                : 'max-h-0 opacity-0'
+            }`}
+          >
+            {openIndexes.includes(index) && (
+              <div className="p-4 bg-white text-gray-700">
+                {item.content}
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Accordion
+export default Accordion;
