@@ -19,13 +19,13 @@ const Team = () => {
   const filteredCard=cards.filter((card)=>card.category===selectedCategory)
   return (
     <div>
-    <div className="flex gap-[40px] items-start max-w-[654px] rounded-[12px] border-[1px] border-[#C6C8D0] p-3">
+    <div className="flex md:gap-[40px] gap-3 flex-wrap items-start max-w-[654px] rounded-[12px] border-[1px] border-[#C6C8D0] p-3">
         {categories.map((category) => (
           
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-[40px] py-[18px] rounded-[8px] ${
+            className={`md:px-[40px] px-[18px] py-[18px] rounded-[8px] ${
               selectedCategory === category
                 ? "bg-[#FCA311] text-[#181818]"
                 : "bg-white text[#181818]"
