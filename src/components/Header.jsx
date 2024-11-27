@@ -47,12 +47,12 @@ const Header = () => {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex md:items-center md:gap-2 xl:gap-4">
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="xl:text-[16px] md:text-[12px] text-[#181818] leading-6 font-normal"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -63,7 +63,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <Link to="/tech-team"
+              <Link to="/"
                
                 className="xl:text-[16px]  md:text-[12px] text-[#181818] leading-6 font-normal"
               >
