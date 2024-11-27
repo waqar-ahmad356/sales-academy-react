@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../assets/logo.png';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,12 +63,12 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a
-                href="#"
+              <Link to="/tech-team"
+               
                 className="xl:text-[16px]  md:text-[12px] text-[#181818] leading-6 font-normal"
               >
                 The Teaching Team
-              </a>
+              </Link>
             </li>
             <li>
               <a
